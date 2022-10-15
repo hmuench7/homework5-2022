@@ -1,0 +1,115 @@
+@keyframes logo {
+    0%      {width: 25px; opacity: 0;}
+    100%    {width: 475px; opacity: 1;}
+}
+
+#logo {
+    animation-name: logo;
+    animation-duration: 5s;
+    max-width: 100%;
+    height: auto;
+}
+body {
+    font-family: 'Poppins', serif;
+    background: #f1f1f1 url(../images/concrete_seamless.png);
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-items: center;
+}
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a:visited {
+    color: #0000FF;
+}
+.card > header {
+    background-color: #288088;
+    border: #45adad solid 2px;
+    padding: 20px, 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.card {
+    display: flex;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-direction: column;
+    flex-basis: 450px;
+}
+.pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.gallery > img {
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px){
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+    }
+    .pricing {
+        flex-wrap: nowrap;
+    }
+    .card {
+        flex-basis: 275px;
+    }
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation-iteration-count: 0;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: end;
+    }
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    #gallery {
+        display: none;
+    }
+    .gallery {
+        display: none;
+    }
+    .card > ul > li:nth-child(2):after {
+        content: "\1F44D"
+    }
+}
